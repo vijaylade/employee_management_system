@@ -28,7 +28,16 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')->with('success', 'Logged in successfully');
+
+            $user = Auth::user();
+
+            if ($user->role === 'admin') {
+                return redirect()->intended('dashboard')->with('success', 'Logged in successfully');
+            } elseif ($user->role === 'employee') {
+                return redirect()->intended('dashboard')->with('success', 'Logged in successfully');
+            }
+
+            return redirect()->route('login')->with('error', 'Role not defined');
         }
 
         return back()->withErrors([

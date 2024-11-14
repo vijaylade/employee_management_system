@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Employee\EmployeeController;
 
 
 /*
@@ -35,4 +36,4 @@ Route::post('/register', [LoginController::class, 'postRegister'])->name('postre
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //Employee Routes 
-Route::resource('user', UserController::class);
+Route::resource('/employee', EmployeeController::class);
