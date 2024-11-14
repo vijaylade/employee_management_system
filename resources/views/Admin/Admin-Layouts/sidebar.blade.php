@@ -17,6 +17,7 @@
              </a>
              <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <!-- Employee Menu  -->
+                    @if (Auth::check() && Auth::user()->role === 'admin') 
                     <li>
                         <a class="nav-link collapsed" data-bs-target="#employee-submenu" data-bs-toggle="collapse"
                             href="#">
@@ -24,12 +25,13 @@
                         </a>
                         <ul id="employee-submenu" class="nav-content collapse ms-auto ps-4" data-bs-parent="#components-nav">
                             <li>
-                                <a href="#">
+                                <a href="/employee/create">
                                     <i class="bi bi-droplet fs-3"></i><span>Add Employee</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
+                    @endif
                    <!-- End Employee Menu  -->
 
                  <!-- Leave Menu  -->
@@ -44,9 +46,16 @@
                                  <i class="bi bi-droplet fs-3"></i><span>My Leaves</span>
                              </a>
                          </li>
+                         <li>
+                            <a href="#">
+                                <i class="bi bi-droplet fs-3"></i><span>View Employee Leaves</span>
+                            </a>
+                        </li>
                      </ul>
                  </li>
                 <!-- End Leave Menu  -->
+
+                
 
                 <!-- Monthly Salary Slip Menu  -->
                  <li>
@@ -68,6 +77,11 @@
                               <i class="bi bi-droplet fs-3"></i><span>Add Status</span>
                           </a>
                       </li>
+                      <li>
+                        <a href="#">
+                            <i class="bi bi-droplet fs-3"></i><span>View Employee Status</span>
+                        </a>
+                    </li>
                   </ul>
               </li>
 

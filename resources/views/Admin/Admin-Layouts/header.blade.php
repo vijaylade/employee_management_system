@@ -5,6 +5,9 @@
     <title>Employee Management System</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
 
     <!-- Favicons -->
     <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
@@ -25,13 +28,39 @@
     <link href="{{ asset('assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
 
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
- 
+    <!-- Jquery CDNS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Include SweetAlert2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <!-- Include SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+
+
+
+    <!-- Employee external JS -->
+    <script src="{{ asset('assets/admin/employee.js') }}"></script>
+
+    <script src="{{ asset('assets/admin/dataTables.min.js') }}"></script>
+    <link href="{{ asset('assets/admin/dataTables.dataTables.min.css') }}" rel="stylesheet">
+
+a
+
+
+
+
+
 </head>
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center">
@@ -153,7 +182,8 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img src="{{ asset('assets/img/messages-1.jpg') }}" alt="" class="rounded-circle">
+                            <img src="{{ asset('assets/img/messages-1.jpg') }}" alt=""
+                                class="rounded-circle">
                             <div>
                                 <h4>Maria Hudson</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -167,7 +197,8 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img src="{{ asset('assets/img/messages-2.jpg') }}" alt="" class="rounded-circle">
+                            <img src="{{ asset('assets/img/messages-2.jpg') }}" alt=""
+                                class="rounded-circle">
                             <div>
                                 <h4>Anna Nelson</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -181,7 +212,8 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img src="{{ asset('assets/img/messages-3.jpg') }}" alt="" class="rounded-circle">
+                            <img src="{{ asset('assets/img/messages-3.jpg') }}" alt=""
+                                class="rounded-circle">
                             <div>
                                 <h4>David Muldon</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
