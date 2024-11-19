@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Employee\EmployeeController;
+use App\Http\Controllers\Leave\LeaveController;
 
 
 /*
@@ -36,4 +37,12 @@ Route::post('/register', [LoginController::class, 'postRegister'])->name('postre
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //Employee Routes 
-Route::resource('/employee', EmployeeController::class);
+Route::group(['middleware' => ['role:admin']], function () {
+    // Only admin users can access employee-related routes
+    Route::resource('/employee', EmployeeController::class);
+});
+
+//Employee Leaves Routes 
+Route::resource('/leaves', LeaveController::class);
+
+

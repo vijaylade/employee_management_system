@@ -32,9 +32,11 @@ class LoginController extends Controller
             $user = Auth::user();
 
             if ($user->role === 'admin') {
-                return redirect()->intended('dashboard')->with('success', 'Logged in successfully');
+                //admin dashboard
+                return redirect()->intended('dashboard')->with('success', 'Logged in successfully with admin');
             } elseif ($user->role === 'employee') {
-                return redirect()->intended('dashboard')->with('success', 'Logged in successfully');
+                 //employee dashboard
+                return redirect()->intended('dashboard')->with('success', 'Logged in successfully with employee');
             }
 
             return redirect()->route('login')->with('error', 'Role not defined');
