@@ -1,0 +1,16 @@
+/* public/css/status-colors.css */
+
+.status-approved {
+    background-color: green;
+    color: white;
+}
+
+.status-rejected {
+    background-color: red;
+    color: white;
+}
+
+.status-pending {
+    background-color: orange;
+    color: white;
+}

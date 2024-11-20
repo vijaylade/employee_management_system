@@ -4,7 +4,7 @@
      <ul class="sidebar-nav" id="sidebar-nav">
 
          <li class="nav-item">
-             <a class="nav-link " href="dashboard">
+             <a class="nav-link " href="{{ url('/dashboard') }}">
                  <i class="bi bi-grid"></i>
                  <span>Dashboard</span>
              </a>
@@ -54,7 +54,7 @@
                              </li>
                          
                          <li>
-                             <a href="#">
+                             <a href="{{ url('/manage-leave') }}">
                                  <i class="bi bi-droplet fs-3"></i><span>Manage Employee Leaves</span>
                              </a>
                          </li>
