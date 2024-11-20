@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Employee\EmployeeController;
 use App\Http\Controllers\Leave\LeaveController;
-
+use App\Http\Controllers\Leave\ManageLeaveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,5 +43,8 @@ Route::resource('/employee', EmployeeController::class);
 
 //Employee Leaves Routes 
 Route::resource('/leaves', LeaveController::class);
+Route::get('/manage-leave', [ManageLeaveController::class, 'index']);
+Route::post('/manage-leave/update-status', [ManageLeaveController::class, 'updateStatus'])->name('manage-leave.update-status');
+
 
 

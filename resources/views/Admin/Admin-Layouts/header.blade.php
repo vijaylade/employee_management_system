@@ -52,6 +52,9 @@
     <!-- Employee external JS -->
     <script src="{{ asset('assets/admin/employee.js') }}"></script>
     <script src="{{ asset('assets/admin/leaves.js') }}"></script>
+    <script src="{{ asset('assets/admin/manageleaves.js') }}"></script>
+    <link href="{{ asset('assets/admin/leaves.css') }}" rel="stylesheet">
+
 
     <script src="{{ asset('assets/admin/dataTables.min.js') }}"></script>
     <link href="{{ asset('assets/admin/dataTables.dataTables.min.css') }}" rel="stylesheet">
