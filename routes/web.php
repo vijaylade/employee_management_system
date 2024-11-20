@@ -37,10 +37,9 @@ Route::post('/register', [LoginController::class, 'postRegister'])->name('postre
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //Employee Routes 
-Route::group(['middleware' => ['role:admin']], function () {
-    // Only admin users can access employee-related routes
-    Route::resource('/employee', EmployeeController::class);
-});
+
+// Only admin users can access employee-related routes
+Route::resource('/employee', EmployeeController::class);
 
 //Employee Leaves Routes 
 Route::resource('/leaves', LeaveController::class);

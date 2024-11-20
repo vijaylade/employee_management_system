@@ -46,18 +46,19 @@
                          <i class="bi bi-bag fs-4"></i><span>Leave</span><i class="bi bi-chevron-down ms-auto fs-5"></i>
                      </a>
                      <ul id="leave-submenu" class="nav-content collapse ms-auto ps-4" data-bs-parent="#components-nav">
+                         
                              <li>
                                  <a href="/leaves/create">
                                      <i class="bi bi-droplet fs-3"></i><span>My Leaves</span>
                                  </a>
                              </li>
-                         @can('manage employee leaves')
-                             <li>
-                                 <a href="#">
-                                     <i class="bi bi-droplet fs-3"></i><span>Manage Employee Leaves</span>
-                                 </a>
-                             </li>
-                         @endcan
+                         
+                         <li>
+                             <a href="#">
+                                 <i class="bi bi-droplet fs-3"></i><span>Manage Employee Leaves</span>
+                             </a>
+                         </li>
+
                      </ul>
                  </li>
                  <!-- End Leave Menu  -->
@@ -65,11 +66,11 @@
 
 
                  <!-- Monthly Salary Slip Menu  -->
-                     <li>
-                         <a href="">
-                             <i class="bi bi-building fs-4"></i><span>Monthly Salary Slip</span>
-                         </a>
-                     </li>
+                 <li>
+                     <a href="">
+                         <i class="bi bi-building fs-4"></i><span>Monthly Salary Slip</span>
+                     </a>
+                 </li>
                  <!--End Monthly Salary Slip Menu  -->
 
                  <!-- Emoplyee status Menu  -->
@@ -80,12 +81,12 @@
                              class="bi bi-chevron-down ms-auto fs-5"></i>
                      </a>
                      <ul id="status-submenu" class="nav-content collapse ms-auto ps-4" data-bs-parent="#components-nav">
-                             <li>
-                                 <a href="#">
-                                     <i class="bi bi-droplet fs-3"></i><span>Add Employee Status</span>
-                                 </a>
-                             </li>
-                       
+                         <li>
+                             <a href="#">
+                                 <i class="bi bi-droplet fs-3"></i><span>Add Employee Status</span>
+                             </a>
+                         </li>
+
                          @can('manage employee status')
                              <li>
                                  <a href="#">
@@ -105,12 +106,12 @@
                  <i class="bi bi-wallet2"></i><span>Event Calender</span><i class="bi bi-chevron-down ms-auto"></i>
              </a>
              <ul id="event-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-                     <li>
-                         <a href="">
-                             <i class="bi bi-person-circle fs-4"></i><span>View Events</span>
-                         </a>
-                     </li>
-            
+                 <li>
+                     <a href="">
+                         <i class="bi bi-person-circle fs-4"></i><span>View Events</span>
+                     </a>
+                 </li>
+
 
              </ul>
          </li><!-- End event Nav -->
