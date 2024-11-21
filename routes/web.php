@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Employee\EmployeeController;
 use App\Http\Controllers\Leave\LeaveController;
 use App\Http\Controllers\Leave\ManageLeaveController;
+use App\Http\Controllers\Calender\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,5 +47,7 @@ Route::resource('/leaves', LeaveController::class);
 Route::get('/manage-leave', [ManageLeaveController::class, 'index']);
 Route::post('/manage-leave/update-status', [ManageLeaveController::class, 'updateStatus'])->name('manage-leave.update-status');
 
-
+//calender routes
+Route::get('/view-events', [EventController::class, 'index']);
+Route::post('/fullcalenderAjax', [EventController::class, 'ajax']);
 

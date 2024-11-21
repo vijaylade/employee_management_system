@@ -67,7 +67,7 @@
 
                  <!-- Monthly Salary Slip Menu  -->
                  <li>
-                     <a href="">
+                     <a href="#">
                          <i class="bi bi-building fs-4"></i><span>Monthly Salary Slip</span>
                      </a>
                  </li>
@@ -107,7 +107,7 @@
              </a>
              <ul id="event-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                  <li>
-                     <a href="">
+                     <a href="{{ url('/view-events') }}">
                          <i class="bi bi-person-circle fs-4"></i><span>View Events</span>
                      </a>
                  </li>
