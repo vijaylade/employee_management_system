@@ -45,7 +45,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
 
 
 
@@ -53,13 +53,25 @@
     <script src="{{ asset('assets/admin/employee.js') }}"></script>
     <script src="{{ asset('assets/admin/leaves.js') }}"></script>
     <script src="{{ asset('assets/admin/manageleaves.js') }}"></script>
+    <script src="{{ asset('assets/admin/event.js') }}"></script>
     <link href="{{ asset('assets/admin/leaves.css') }}" rel="stylesheet">
 
 
     <script src="{{ asset('assets/admin/dataTables.min.js') }}"></script>
     <link href="{{ asset('assets/admin/dataTables.dataTables.min.css') }}" rel="stylesheet">
 
-a
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
 
 
 
@@ -72,7 +84,7 @@ a
     <div class="d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
             <img src="{{ asset('assets/img/logo.png') }}" alt="">
-            <span class="d-none d-lg-block">MKU</span>
+            <span class="d-none d-lg-block">EMS</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -242,13 +254,13 @@ a
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                     data-bs-toggle="dropdown">
                     <img src="{{ asset('assets/img/profile-img.jpg') }}" alt="Profile" class="rounded-circle">
-                    <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name}}</span>
+                    <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
                 </a><!-- End Profile Iamge Icon -->
 
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li class="dropdown-header">
-                        <h6>{{ Auth::user()->name}}</h6>
-                        <span>{{ Auth::user()->role}}</span>
+                        <h6>{{ Auth::user()->name }}</h6>
+                        <span>{{ Auth::user()->role }}</span>
                     </li>
                     <li>
                         <hr class="dropdown-divider">
