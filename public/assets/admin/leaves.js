@@ -57,7 +57,6 @@ $(document).ready(function () {
             { data: 'from_leave', name: 'from_leave' },
             { data: 'days', name: 'days' },
             { data: 'status', name: 'status' },
-            { data: 'reason', name: 'reason' },
             { data: 'action', name: 'action', orderable: false, searchable: false },
         ]
     });
@@ -125,6 +124,7 @@ $(document).on('click', '.leaveview', function () {
             $('#viewfrom_date').text(response.from_date);
             $('#viewto_date').text(response.to_date);
             $('#viewreason').text(response.reason);
+            $('#viewstatus').text(response.status);
         },
         error: function (xhr, status, error) {
             console.error('Error fetching leave data:', error);
