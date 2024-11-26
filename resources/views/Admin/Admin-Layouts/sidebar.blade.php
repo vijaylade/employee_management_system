@@ -28,7 +28,7 @@
                              data-bs-parent="#components-nav">
                              @can('manage employees')
                                  <li>
-                                     <a href="/employee/create">
+                                     <a href="{{ url('/employee/create') }}">
                                          <i class="bi bi-droplet fs-3"></i><span>Manage Employees</span>
                                      </a>
                                  </li>
@@ -46,19 +46,20 @@
                          <i class="bi bi-bag fs-4"></i><span>Leave</span><i class="bi bi-chevron-down ms-auto fs-5"></i>
                      </a>
                      <ul id="leave-submenu" class="nav-content collapse ms-auto ps-4" data-bs-parent="#components-nav">
-                         
-                             <li>
-                                 <a href="/leaves/create">
-                                     <i class="bi bi-droplet fs-3"></i><span>My Leaves</span>
-                                 </a>
-                             </li>
-                         
+
                          <li>
-                             <a href="{{ url('/manage-leave') }}">
-                                 <i class="bi bi-droplet fs-3"></i><span>Manage Employee Leaves</span>
+                             <a href="{{ url('/leaves/create') }}">
+                                 <i class="bi bi-droplet fs-3"></i><span>My Leaves</span>
                              </a>
                          </li>
 
+                         @can('manage employee status')
+                             <li>
+                                 <a href="{{ url('/manage-leave') }}">
+                                     <i class="bi bi-droplet fs-3"></i><span>Manage Employee Leaves</span>
+                                 </a>
+                             </li>
+                         @endcan
                      </ul>
                  </li>
                  <!-- End Leave Menu  -->
@@ -81,15 +82,16 @@
                              class="bi bi-chevron-down ms-auto fs-5"></i>
                      </a>
                      <ul id="status-submenu" class="nav-content collapse ms-auto ps-4" data-bs-parent="#components-nav">
-                         <li>
-                             <a href="#">
-                                 <i class="bi bi-droplet fs-3"></i><span>Add Employee Status</span>
-                             </a>
-                         </li>
+                             <li>
+                                 <a href="{{ url('/employee-status/create') }}">
+                                     <i class="bi bi-droplet fs-3"></i><span>Add Employee Status</span>
+                                 </a>
+                             </li>
+
 
                          @can('manage employee status')
                              <li>
-                                 <a href="#">
+                                 <a href="{{ url('/manage-status') }}">
                                      <i class="bi bi-droplet fs-3"></i><span>Manage Employee Status</span>
                                  </a>
                              </li>

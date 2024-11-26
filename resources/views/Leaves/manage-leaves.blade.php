@@ -38,6 +38,7 @@
                     <p><strong>From Date:</strong> <span id="viewfrom_date"></span></p>
                     <p><strong>To Date:</strong> <span id="viewto_date"></span></p>
                     <p><strong>Reason:</strong> <span id="viewreason"></span></p>
+                    <p><strong>Status:</strong> <span id="viewstatus"></span></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

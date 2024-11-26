@@ -9,7 +9,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\Facades\DataTables;
 
-
 class EmployeeController extends Controller
 {
     /**
@@ -142,10 +141,6 @@ class EmployeeController extends Controller
         ]);
     
         return redirect()->back()->with('success', 'Profile updated successfully!');
-        // return response()->json([
-        //     'success' => 'Profile updated successfully',
-        //     'redirect_url' => route('employee.index')
-        // ]);
     }
 
     /**

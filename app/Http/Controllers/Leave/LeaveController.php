@@ -25,12 +25,17 @@ class LeaveController extends Controller
                 ->addColumn('from_leave', function ($leave) {
                     return $leave->from_date . ' to ' . $leave->to_date; 
                 })
+                ->addColumn('status', function ($empstatus) {
+                    $statusClass = $empstatus->status == 'approved' ? 'btn-success' : 
+                                   ($empstatus->status == 'rejected' ? 'btn-danger' : 'btn-warning');
+                    return '<button class="btn ' . $statusClass . ' btn-sm">' . $empstatus->status . '</button>';
+                })
                 ->addColumn('action', function ($leaves) {
                     $btn = '<a href="" data-id="' . $leaves->id . '" class="leaveedit btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">Edit</a>';
                     $btn .= ' <a href="" data-id="' . $leaves->id . '" class="leaveview btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#viewModal">View</a>';
                     return $btn;
                 })
-                ->rawColumns(['action'])
+                ->rawColumns(['action','status'])
                 ->make(true);
         }
     

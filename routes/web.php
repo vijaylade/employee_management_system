@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Employee\EmployeeController;
+use App\Http\Controllers\Employee\EmployeeStatusController;
+use App\Http\Controllers\ManageStatusController;
 use App\Http\Controllers\Leave\LeaveController;
 use App\Http\Controllers\Leave\ManageLeaveController;
 use App\Http\Controllers\Calender\EventController;
@@ -38,9 +40,11 @@ Route::post('/register', [LoginController::class, 'postRegister'])->name('postre
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //Employee Routes 
-
-// Only admin users can access employee-related routes
 Route::resource('/employee', EmployeeController::class);
+Route::resource('/employee-status', EmployeeStatusController::class);
+Route::get('/manage-status', [ManageStatusController::class, 'index']);
+Route::post('/update-status', [ManageStatusController::class, 'updateStatus']);
+
 
 //Employee Leaves Routes 
 Route::resource('/leaves', LeaveController::class);

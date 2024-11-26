@@ -7,8 +7,6 @@
     <meta content="" name="keywords">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-
-
     <!-- Favicons -->
     <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
     <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
@@ -31,7 +29,6 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
 
-
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
@@ -44,38 +41,32 @@
     <!-- Include SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
-
-
-
     <!-- Employee external JS -->
     <script src="{{ asset('assets/admin/employee.js') }}"></script>
+    <script src="{{ asset('assets/admin/addstatus.js') }}"></script>
+    <script src="{{ asset('assets/admin/managestatus.js') }}"></script>
+    <!-- Leaves external JS -->
     <script src="{{ asset('assets/admin/leaves.js') }}"></script>
     <script src="{{ asset('assets/admin/manageleaves.js') }}"></script>
-    <script src="{{ asset('assets/admin/event.js') }}"></script>
+    <!-- Leaves external CSS -->
     <link href="{{ asset('assets/admin/leaves.css') }}" rel="stylesheet">
+    <!-- event external JS -->
+    <script src="{{ asset('assets/admin/event.js') }}"></script>
 
-
+    <!-- Datatables CDN -->
     <script src="{{ asset('assets/admin/dataTables.min.js') }}"></script>
     <link href="{{ asset('assets/admin/dataTables.dataTables.min.css') }}" rel="stylesheet">
 
-
-  
+    <!-- calender JS CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
+
+    <!-- calender CSS CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
-  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
-
-    
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
-
-
-
-
 
 </head>
 <!-- ======= Header ======= -->
@@ -267,31 +258,12 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                        <a class="dropdown-item d-flex align-items-center" href="#">
                             <i class="bi bi-person"></i>
                             <span>My Profile</span>
                         </a>
                     </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
 
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                            <i class="bi bi-gear"></i>
-                            <span>Account Settings</span>
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                            <i class="bi bi-question-circle"></i>
-                            <span>Need Help?</span>
-                        </a>
-                    </li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
