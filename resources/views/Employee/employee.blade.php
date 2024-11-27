@@ -47,8 +47,9 @@
                                     <label for="role">Role</label>
                                     <select name="role" class="form-control" id="role">
                                         <option value="">Select Role</option>
-                                        <option value="admin">Admin</option>
-                                        <option value="employee">Employee</option>
+                                        @foreach ($roles as $role)
+                                            <option value="{{ $role->name }}">{{ ucfirst($role->name) }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
 
@@ -163,17 +164,17 @@
     </div>
 
     @if (session('success'))
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: '{{ session('success') }}',
-            position: 'top-end',
-            toast: true,
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true
-        });
-    </script>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: '{{ session('success') }}',
+                position: 'top-end',
+                toast: true,
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true
+            });
+        </script>
     @endif
 
 
@@ -195,7 +196,7 @@
                         <h5>Profile</h5>
                         <form action="" id="editForm" method="POST">
                             @csrf
-                            @method('PUT') 
+                            @method('PUT')
 
                             <div class="row">
                                 <div class="col-6">
@@ -210,7 +211,8 @@
 
                                 <div class="col-6">
                                     <label for="company_email">Company Email</label>
-                                    <input type="email" name="company_email" id="editcompany_email" class="form-control">
+                                    <input type="email" name="company_email" id="editcompany_email"
+                                        class="form-control">
                                 </div>
 
                                 <div class="col-6">
@@ -223,7 +225,8 @@
 
                                 <div class="col-6">
                                     <label for="joining_date">Joining Date</label>
-                                    <input type="date" name="joining_date" id="editjoining_date" class="form-control">
+                                    <input type="date" name="joining_date" id="editjoining_date"
+                                        class="form-control">
                                 </div>
 
                                 <div class="col-6">
@@ -259,7 +262,8 @@
 
                                 <div class="col-6">
                                     <label for="phone_number">Phone Number</label>
-                                    <input type="text" name="phone_number" id="editphone_number" class="form-control">
+                                    <input type="text" name="phone_number" id="editphone_number"
+                                        class="form-control">
                                 </div>
 
                                 <div class="col-12">
@@ -272,7 +276,8 @@
                             <div class="row">
                                 <div class="col-6">
                                     <label for="aadhar_number">Aadhar Card Number</label>
-                                    <input type="text" name="aadhar_number" id="editaadhar_number" class="form-control">
+                                    <input type="text" name="aadhar_number" id="editaadhar_number"
+                                        class="form-control">
                                 </div>
 
                                 <div class="col-6">

@@ -31,10 +31,10 @@ class LoginController extends Controller
 
             $user = Auth::user();
 
-            if ($user->role === 'admin') {
+            if ($user->role_id === 1) {
                 //admin dashboard
                 return redirect()->intended('dashboard')->with('success', 'Logged in successfully with admin');
-            } elseif ($user->role === 'employee') {
+            } elseif ($user->role_id === 2) {
                  //employee dashboard
                 return redirect()->intended('dashboard')->with('success', 'Logged in successfully with employee');
             }

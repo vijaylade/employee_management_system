@@ -21,8 +21,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'role_id',
         'password',
-        'role',
         'company_email',
         'status',
     ];
@@ -60,4 +60,17 @@ class User extends Authenticatable
     {
         return $this->hasOne(EmployeeStatus::class);
     }
+
+    public function roles()
+    {
+        return $this->belongsTo(Role::class,'role_id');
+    }
+    
+    public function hasPermission($permission)
+    {
+        $role = Role::find($this->role_id); // Assuming Role is your model
+        return $role->permissions()->where('name', $permission)->exists();
+    }
+    
+    
 }
