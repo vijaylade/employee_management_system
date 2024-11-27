@@ -4,15 +4,32 @@ namespace App\Http\Controllers\Permission;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Permission;
+use Illuminate\Support\Facades\Hash;
+use Yajra\DataTables\Facades\DataTables;
 
 class PermissionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if ($request->ajax()) {
+            $permission = Permission::get(); 
+    
+            return DataTables::of($permission)
+                ->addIndexColumn()
+                ->addColumn('action', function ($permission) {
+                    $btn = '<a href="#" data-id="' . $permission->id . '" class="permissionedit btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">Edit</a>';
+                    $btn .= ' <a href="#" data-id="' . $permission->id . '" class="permissiondelete btn btn-danger btn-sm">Delete</a>';
+                    return $btn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+    
+        return view('Permission.permission');
     }
 
     /**
@@ -28,7 +45,15 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $permission = Permission::create([
+            'name' => $request->name,
+            'guard_name' => $request->guard_name,
+        ]);
+
+        return response()->json([
+            'success' => 'Permission added successfully',
+            'permission' => $permission,
+        ]);   
     }
 
     /**
@@ -44,7 +69,8 @@ class PermissionController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $permission = Permission::findOrFail($id);
+        return response()->json($permission);
     }
 
     /**
@@ -52,7 +78,14 @@ class PermissionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $permission = Permission::findOrFail($id);
+    
+        $permission->update([
+            'name' => $request->name,
+            'guard_name' => $request->guard_name,
+        ]);
+    
+        return redirect()->back()->with('success', 'Permission updated successfully!');
     }
 
     /**
@@ -60,6 +93,8 @@ class PermissionController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $permission = Permission::findOrFail($id); 
+        $permission->delete();
+        return response()->json(['success' => 'Permission deleted successfully.']);
     }
 }
