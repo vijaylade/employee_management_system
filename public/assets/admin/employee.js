@@ -7,7 +7,6 @@ $(document).ready(function () {
             email: $('#email').val(),
             password: $('#password').val(),
             company_email: $('#company_email').val(),
-            role: $('#role').val(),
             joining_date: $('#joining_date').val(),
             designation: $('#designation').val(),
             status: $('#status').val(),
@@ -98,7 +97,6 @@ $(document).on('click', '.edit', function () {
             $('#editname').val(response.user.name);
             $('#editemail').val(response.user.email);
             $('#editcompany_email').val(response.user.company_email);
-            $('#editrole').val(response.user.role);
 
             $('input[name="gender"][value="' + response.employee.gender + '"]').prop('checked', true);
             $('#editjoining_date').val(response.employee.joining_date);

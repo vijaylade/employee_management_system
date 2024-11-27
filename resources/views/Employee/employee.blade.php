@@ -216,14 +216,6 @@
                                 </div>
 
                                 <div class="col-6">
-                                    <label for="role">Role</label>
-                                    <select name="role" class="form-control" id="editrole">
-                                        <option value="admin">Admin</option>
-                                        <option value="employee">Employee</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-6">
                                     <label for="joining_date">Joining Date</label>
                                     <input type="date" name="joining_date" id="editjoining_date"
                                         class="form-control">
