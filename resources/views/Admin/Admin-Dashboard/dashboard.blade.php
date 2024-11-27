@@ -3,7 +3,7 @@
 @section('content')
 
     
-        <h1 class="text-center">Welcome To {{ Auth::user()->role}} Dashboard</h1>
+        <h1 class="text-center">Welcome To  Dashboard</h1>
     
    
 @endsection

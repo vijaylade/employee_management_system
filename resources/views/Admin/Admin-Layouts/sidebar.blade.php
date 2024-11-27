@@ -117,6 +117,39 @@
                  </ul>
              </li><!-- End event Nav -->
          @endif
+
+         <!--Permission Menu-->
+
+         <li class="nav-item">
+             <a class="nav-link collapsed" data-bs-target="#permission-nav" data-bs-toggle="collapse" href="#">
+                 <i class="bi bi-calendar-event"></i><span>Permissions</span><i class="bi bi-chevron-down ms-auto"></i>
+             </a>
+             <ul id="permission-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                 <li>
+                     <a href="{{ url('/permission/create') }}">
+                         <i class="bi bi-calendar-check fs-4"></i><span>Add Permission</span>
+                     </a>
+                 </li>
+             </ul>
+         </li>
+         <!--Permission Menu-->
+
+         <!--Roles Menu-->
+         <li class="nav-item">
+             <a class="nav-link collapsed" data-bs-target="#role-nav" data-bs-toggle="collapse" href="#">
+                 <i class="bi bi-calendar-event"></i><span>Roles</span><i class="bi bi-chevron-down ms-auto"></i>
+             </a>
+             <ul id="role-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                 <li>
+                     <a href="{{ url('/roles/create') }}">
+                         <i class="bi bi-calendar-check fs-4"></i><span>Add Role</span>
+                     </a>
+                 </li>
+             </ul>
+         </li>
+         <!--Roles Menu-->
+
+
      </ul>
 
  </aside><!-- End Sidebar-->

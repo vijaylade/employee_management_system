@@ -9,6 +9,8 @@ use App\Http\Controllers\Leave\LeaveController;
 use App\Http\Controllers\Leave\ManageLeaveController;
 use App\Http\Controllers\Calender\EventController;
 use App\Http\Controllers\Profile\ProfileController;
+use App\Http\Controllers\Permission\PermissionController;
+use App\Http\Controllers\Role\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,3 +60,8 @@ Route::post('/fullcalenderAjax', [EventController::class, 'ajax']);
 //Profile Routes
 Route::get('/profile', [ProfileController::class, 'index']);
 
+//Permission Routes
+Route::resource('/permission', PermissionController::class);
+
+//Role Routes
+Route::resource('/roles', RoleController::class);

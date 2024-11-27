@@ -131,7 +131,6 @@ class EmployeeController extends Controller
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
-            'role' => $request->role,
             'company_email' => $request->company_email,
             'status' => $request->status,
         ]);

@@ -52,6 +52,10 @@
     <link href="{{ asset('assets/admin/leaves.css') }}" rel="stylesheet">
     <!-- event external JS -->
     <script src="{{ asset('assets/admin/event.js') }}"></script>
+     <!-- role external JS -->
+     <script src="{{ asset('assets/admin/role.js') }}"></script>
+      <!-- permission external JS -->
+    <script src="{{ asset('assets/admin/permission.js') }}"></script>
 
     <!-- Datatables CDN -->
     <script src="{{ asset('assets/admin/dataTables.min.js') }}"></script>
@@ -94,7 +98,7 @@
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li class="dropdown-header">
                         <h6>{{ Auth::user()->name }}</h6>
-                        <span>{{ Auth::user()->role }}</span>
+                        <span></span>
                     </li>
                     <li>
                         <hr class="dropdown-divider">
