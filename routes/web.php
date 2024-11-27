@@ -8,6 +8,7 @@ use App\Http\Controllers\ManageStatusController;
 use App\Http\Controllers\Leave\LeaveController;
 use App\Http\Controllers\Leave\ManageLeaveController;
 use App\Http\Controllers\Calender\EventController;
+use App\Http\Controllers\Profile\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +46,6 @@ Route::resource('/employee-status', EmployeeStatusController::class);
 Route::get('/manage-status', [ManageStatusController::class, 'index']);
 Route::post('/update-status', [ManageStatusController::class, 'updateStatus']);
 
-
 //Employee Leaves Routes 
 Route::resource('/leaves', LeaveController::class);
 Route::get('/manage-leave', [ManageLeaveController::class, 'index']);
@@ -54,4 +54,7 @@ Route::post('/manage-leave/update-status', [ManageLeaveController::class, 'updat
 //calender routes
 Route::get('/view-events', [EventController::class, 'index']);
 Route::post('/fullcalenderAjax', [EventController::class, 'ajax']);
+
+//Profile Routes
+Route::get('/profile', [ProfileController::class, 'index']);
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Employee;
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -47,7 +48,8 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('Employee.employee');
+        $roles = Role::all(); 
+        return view('Employee.employee', compact('roles'));
     }
 
     /**
@@ -55,14 +57,23 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-    $user = User::create([
-        'name' => $request->name,
-        'email' => $request->email,
-        'password' => Hash::make($request->password), 
-        'role' => $request->role,
-        'company_email' => $request->company_email,
-        'status' => $request->status,
-    ]);
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'role' => 'required|string|exists:roles,name', 
+            'company_email' => 'nullable|email',
+        ]);
+
+        $role = Role::where('name', $validated['role'])->firstOrFail();
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'role_id' => $role->id, 
+            'password' => Hash::make($request->password), 
+            'company_email' => $request->company_email,
+            'status' => $request->status,
+        ]);
 
     $employee = Employee::create([
         'user_id' => $user->id, 
