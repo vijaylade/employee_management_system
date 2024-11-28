@@ -1,7 +1,7 @@
 @extends('Admin.Admin-Layouts.app');
 
 @section('content')
-    <h1 class="text-center">Welcome To role Dashboard</h1>
+    <h3 class="text-center">Welcome To Role Page</h3>
 
     <!-- Button trigger modal -->
     <div class="d-flex justify-content-end">
@@ -31,6 +31,16 @@
                                     <label for="guard_name">Guard Name</label>
                                     <input type="text" name="guard_name" id="guard_name" class="form-control">
                                 </div>
+                            </div><hr>
+                            <div class="row">
+                                <h4>Assign Permissions</h4><hr>
+                                @foreach ($permissions as $permission)
+                                    <div class="col-6">
+                                        <input type="checkbox" name="permissions[]" value="{{ $permission->id }}"
+                                            id="permission-{{ $permission->id }}">
+                                        <label for="permission-{{ $permission->id }}">{{ $permission->name }}</label><br>
+                                    </div>
+                                @endforeach
                             </div>
                         </form>
                     </div>
@@ -59,13 +69,15 @@
         </tbody>
     </table>
 
+    <!-- Edit Role Model Code -->
+
     <div class="container mt-3">
         {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
           Edit 
         </button> --}}
     </div>
 
-    
+
     @if (session('success'))
         <script>
             Swal.fire({
@@ -110,6 +122,16 @@
                                     <input type="text" name="guard_name" id="editguard_name" class="form-control">
                                 </div>
                             </div>
+                            <div class="row">
+                                <h4>Update Permissions</h4>
+                                <hr>
+                                @foreach ($permissions as $permission)
+                                    <div class="col-6">
+                                        <input type="checkbox" name="permissions[]" value="{{ $permission->id }}" id="editpermission{{ $permission->id }}">
+                                        <label for="editpermission{{ $permission->id }}">{{ $permission->name }}</label><br>
+                                    </div>
+                                @endforeach
+                            </div>
 
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>
@@ -125,5 +147,4 @@
             </div>
         </div>
     </div>
-    
 @endsection

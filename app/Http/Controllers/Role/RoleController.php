@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Role;
+use App\Models\Permission;
+use App\Models\RoleHasPermission;
 use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -37,7 +39,8 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('Role.role');
+        $permissions = Permission::all();
+        return view('Role.role', compact('permissions'));
     }
 
     /**
@@ -45,14 +48,26 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
+       
+        $selectedPermissions = $request->input('permissions', []);
+        $roleId = $request->role_id;
+
         $role = Role::create([
             'name' => $request->name,
             'guard_name' => $request->guard_name,
         ]);
 
+        foreach ($selectedPermissions as $permissionId) {
+            RoleHasPermission::create([
+                'role_id' => $role->id,
+                'permission_id' => $permissionId,
+            ]);
+        }
+
         return response()->json([
-            'success' => 'Role added successfully',
+            'success' => 'Role added and permissions assigned successfully',
             'role' => $role,
+            'permissions' => $role->permissions,
         ]);    
     }
 
@@ -69,7 +84,7 @@ class RoleController extends Controller
      */
     public function edit(string $id)
     {
-        $role = Role::findOrFail($id);
+        $role = Role::with('permissions')->findOrFail($id);
         return response()->json($role);
     }
 
@@ -84,6 +99,21 @@ class RoleController extends Controller
             'name' => $request->name,
             'guard_name' => $request->guard_name,
         ]);
+
+         // Update permissions
+         $selectedPermissions = $request->input('permissions', []);
+    
+         // Delete existing permissions for the role
+         RoleHasPermission::where('role_id', $id)->delete();
+     
+         // Add new permissions
+         foreach ($selectedPermissions as $permissionId) {
+            RoleHasPermission::create([
+                 'role_id' => $id,
+                 'permission_id' => $permissionId,
+             ]);
+         }
+     
     
         return redirect()->back()->with('success', 'Role updated successfully!');
 

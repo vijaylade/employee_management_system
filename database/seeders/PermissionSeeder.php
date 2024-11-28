@@ -20,7 +20,7 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'add employee status', 'guard_name' => 'web']);
         Permission::create(['name' => 'manage employee status', 'guard_name' => 'web']);
         Permission::create(['name' => 'view events', 'guard_name' => 'web']);
-
-
+        Permission::create(['name' => 'permissions', 'guard_name' => 'web']);
+        Permission::create(['name' => 'roles', 'guard_name' => 'web']);
     }
 }
