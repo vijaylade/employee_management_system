@@ -45,7 +45,7 @@
 
                                 <div class="col-6">
                                     <label for="role">Role</label>
-                                    <select name="role" class="form-control" id="role">
+                                    <select name="role_id" class="form-control" id="role">
                                         <option value="">Select Role</option>
                                         @foreach ($roles as $role)
                                             <option value="{{ $role->name }}">{{ ucfirst($role->name) }}</option>

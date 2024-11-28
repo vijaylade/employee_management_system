@@ -98,7 +98,7 @@
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li class="dropdown-header">
                         <h6>{{ Auth::user()->name }}</h6>
-                        <span></span>
+                        <span>{{ Auth::user()->roles->name }}</span>
                     </li>
                     <li>
                         <hr class="dropdown-divider">
@@ -118,7 +118,7 @@
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="/logout">
                             <i class="bi bi-box-arrow-right"></i>
-                            <span>Sign Out</span>
+                            <span>Logout</span>
                         </a>
                     </li>
 

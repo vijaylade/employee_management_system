@@ -60,11 +60,11 @@ class EmployeeController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'role' => 'required|string|exists:roles,name', 
+            'role_id' => 'required|string|exists:roles,name', 
             'company_email' => 'nullable|email',
         ]);
 
-        $role = Role::where('name', $validated['role'])->firstOrFail();
+        $role = Role::where('name', $validated['role_id'])->firstOrFail();
 
         $user = User::create([
             'name' => $request->name,
