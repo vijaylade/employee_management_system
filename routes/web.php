@@ -28,10 +28,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/main', function () {
-    return view('Admin.Admin-Layouts.app');
-});
-
 //Dashboard Routes
 Route::get('/dashboard', [DashboardController::class, 'index']);
 

@@ -32,8 +32,8 @@ class EmployeeController extends Controller
                     return $user->employee->status ?? 'N/A';
                 })
                 ->addColumn('action', function ($user) {
-                    $btn = '<a href="" data-id="' . $user->id . '" class="edit btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">Edit</a>';
-                    $btn .= ' <a href="" data-id="' . $user->id . '" class="delete btn btn-danger btn-sm">Delete</a>';
+                    $btn = '<a href="#" data-id="' . $user->id . '" class="edit btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">Edit</a>';
+                    $btn .= ' <a href="#" data-id="' . $user->id . '" class="delete btn btn-danger btn-sm">Delete</a>';
                     return $btn;
                 })
                 ->rawColumns(['action'])

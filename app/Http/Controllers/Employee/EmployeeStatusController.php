@@ -28,8 +28,8 @@ class EmployeeStatusController extends Controller
                     return '<button class="btn ' . $statusClass . ' btn-sm">' . $empstatus->status . '</button>';
                 })
                 ->addColumn('action', function ($empstatus) {
-                    $btn = '<a href="" data-id="' . $empstatus->id . '" class="edit btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">Edit</a>';
-                    $btn .= ' <a href="" data-id="' . $empstatus->id . '" class="statusview btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#viewModal">View</a>';
+                    $btn = '<a href="#" data-id="' . $empstatus->id . '" class="statusedit btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">Edit</a>';
+                    $btn .= ' <a href="#" data-id="' . $empstatus->id . '" class="statusview btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#viewModal">View</a>';
                     return $btn;
                 })
                 ->rawColumns(['action','status'])
@@ -84,7 +84,8 @@ class EmployeeStatusController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $empstatus = EmployeeStatus::findOrFail($id);
+        return response()->json($empstatus);    
     }
 
     /**
@@ -92,7 +93,17 @@ class EmployeeStatusController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $empstatus = EmployeeStatus::findOrFail($id);
+    
+        $empstatus->update([
+            'date' => $request->date,
+            'in_time' => $request->in_time,
+            'out_time' => $request->out_time,
+            'break_time' => $request->break_time,
+            'work_report' => $request->work_report,
+        ]);
+
+        return redirect()->route('employee-status.create')->with('success', 'Status updated successfully');    
     }
 
     /**
