@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\EmployeeStatus;
 use App\Models\User;
+use App\Models\Employee;
 use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Auth;
@@ -52,8 +53,11 @@ class EmployeeStatusController extends Controller
      */
     public function store(Request $request)
     {
+        $employee = Employee::where('user_id', Auth::id())->first();
+
         $empstatus = EmployeeStatus::create([
-            'user_id' => auth()->id(),
+            'user_id' => Auth::id(),
+            'emp_id' => $employee->id,
             'date' => $request->date,
             'in_time' => $request->in_time,
             'out_time' => $request->out_time,

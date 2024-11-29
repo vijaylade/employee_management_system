@@ -1,7 +1,7 @@
 @extends('Admin.Admin-Layouts.app');
 
 @section('content')
-    <h1 class="text-center">Add status Dashboard</h1>
+    <h3 class="text-center">Add status Dashboard</h3>
 
 
     <!-- Button trigger modal -->

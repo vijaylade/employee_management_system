@@ -11,6 +11,7 @@ class EmployeeStatus extends Model
 
     protected $fillable = [
         'user_id',
+        'emp_id',
         'date',
         'in_time',
         'out_time',

@@ -1,29 +1,27 @@
 @extends('Admin.Admin-Layouts.app');
 
 @section('content')
+    <h3 class="text-center">Welcome To manage leaves Dashboard</h3>
 
-    
-        <h1 class="text-center">Welcome To manage leaves Dashboard</h1>
-
-        <table id="managetable" class="display">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>leave_category</th>
-                    <th>from leave</th>
-                    <th>days</th>
-                    <th>status</th>
-                    <th>reason</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+    <table id="managetable" class="display">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>leave_category</th>
+                <th>from leave</th>
+                <th>days</th>
+                <th>status</th>
+                <th>reason</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 
 
-        
+
     <!--View Model-->
     <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -46,6 +44,4 @@
             </div>
         </div>
     </div>
-    
-   
 @endsection
