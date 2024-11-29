@@ -6,12 +6,19 @@ $(document).ready(function () {
         var name = $('#rolename').val();
         var guard_name = $('#guard_name').val();
 
+        // Fetch selected permissions
+        var permissions = [];
+        $('input[name="permissions[]"]:checked').each(function () {
+            permissions.push($(this).val());
+        });
+
         $.ajax({
             url: '/roles',
             type: 'POST',
             data: {
                 name: name,
-                guard_name: guard_name
+                guard_name: guard_name,
+                permissions: permissions
             },
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -106,10 +113,12 @@ $(document).on('click', '.roleedit', function () {
         url: '/roles/' + roleId + '/edit',
         method: 'GET',
         success: function (response) {
-            // Populate the form fields
             $('#editrolename').val(response.name);
             $('#editguard_name').val(response.guard_name);
-
+            $('input[name="permissions[]"]').prop('checked', false);
+            response.permissions.forEach(function (permission) {
+                $('#editpermission' + permission.id).prop('checked', true);
+            });
             $('#roleform').attr('action', '/roles/' + roleId);
         }
     });

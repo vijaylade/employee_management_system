@@ -32,8 +32,8 @@ class EmployeeController extends Controller
                     return $user->employee->status ?? 'N/A';
                 })
                 ->addColumn('action', function ($user) {
-                    $btn = '<a href="" data-id="' . $user->id . '" class="edit btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">Edit</a>';
-                    $btn .= ' <a href="" data-id="' . $user->id . '" class="delete btn btn-danger btn-sm">Delete</a>';
+                    $btn = '<a href="#" data-id="' . $user->id . '" class="edit btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">Edit</a>';
+                    $btn .= ' <a href="#" data-id="' . $user->id . '" class="delete btn btn-danger btn-sm">Delete</a>';
                     return $btn;
                 })
                 ->rawColumns(['action'])
@@ -60,11 +60,11 @@ class EmployeeController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'role' => 'required|string|exists:roles,name', 
+            'role_id' => 'required|string|exists:roles,name', 
             'company_email' => 'nullable|email',
         ]);
 
-        $role = Role::where('name', $validated['role'])->firstOrFail();
+        $role = Role::where('name', $validated['role_id'])->firstOrFail();
 
         $user = User::create([
             'name' => $request->name,

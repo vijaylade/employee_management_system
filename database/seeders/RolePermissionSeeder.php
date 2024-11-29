@@ -24,6 +24,8 @@ class RolePermissionSeeder extends Seeder
               'monthly salary slip',
               'manage employee status',
               'view events',
+              'permissions',
+              'roles',
           ]);
 
            // Find or create the employee role

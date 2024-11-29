@@ -11,6 +11,7 @@ use App\Http\Controllers\Calender\EventController;
 use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\Permission\PermissionController;
 use App\Http\Controllers\Role\RoleController;
+use App\Http\Controllers\Dashboard\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,13 +28,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/main', function () {
-    return view('Admin.Admin-Layouts.app');
-});
-
-Route::get('/dashboard', function () {
-    return view('Admin.Admin-Dashboard.dashboard');
-});
+//Dashboard Routes
+Route::get('/dashboard', [DashboardController::class, 'index']);
 
 //Login & Register Routes
 Route::get('/login', [LoginController::class, 'login']);

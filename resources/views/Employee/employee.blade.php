@@ -10,7 +10,7 @@
         </button>
     </div>
 
-    <!-- Modal -->
+    <!-- Start Add Create Code -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -45,7 +45,7 @@
 
                                 <div class="col-6">
                                     <label for="role">Role</label>
-                                    <select name="role" class="form-control" id="role">
+                                    <select name="role_id" class="form-control" id="role">
                                         <option value="">Select Role</option>
                                         @foreach ($roles as $role)
                                             <option value="{{ $role->name }}">{{ ucfirst($role->name) }}</option>
@@ -140,7 +140,9 @@
             </div>
         </div>
     </div>
+    <!-- End Add Create Code -->
 
+    <!-- Start Table code -->
     <table id="employeeTable" class="display">
         <thead>
             <tr>
@@ -156,7 +158,9 @@
         <tbody>
         </tbody>
     </table>
+    <!-- End Table code -->
 
+    <!-- Start Edit code -->
     <div class="container mt-3">
         {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
           Edit 
@@ -176,7 +180,6 @@
             });
         </script>
     @endif
-
 
     <!-- The Modal -->
     <div class="modal" id="myModal">
@@ -306,4 +309,5 @@
             </div>
         </div>
     </div>
+    <!-- End Edit code -->
 @endsection

@@ -7,6 +7,7 @@ $(document).ready(function () {
             email: $('#email').val(),
             password: $('#password').val(),
             company_email: $('#company_email').val(),
+            role_id: $('#role').val(),
             joining_date: $('#joining_date').val(),
             designation: $('#designation').val(),
             status: $('#status').val(),
