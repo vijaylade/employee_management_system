@@ -1,7 +1,7 @@
 @extends('Admin.Admin-Layouts.app');
 
 @section('content')
-    <h1 class="text-center">Welcome To leaves Dashboard</h1>
+    <h3 class="text-center">Welcome To leaves Dashboard</h3>
 
     <!-- Button trigger modal -->
     <div class="d-flex justify-content-end">

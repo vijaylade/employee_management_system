@@ -1,11 +1,9 @@
 @extends('Admin.Admin-Layouts.app');
 
 @section('content')
+    <h3 class="text-center">manage status Dashboard</h3>
 
-    
-        <h1 class="text-center">manage status Dashboard</h1>
-
-          <!--table code -->
+    <!--table code -->
     <table id="managestatus" class="display">
         <thead>
             <tr>
@@ -25,8 +23,6 @@
         </tbody>
     </table>
 
-
-        
     <!--View Model-->
     <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -50,6 +46,4 @@
             </div>
         </div>
     </div>
-    
-   
 @endsection

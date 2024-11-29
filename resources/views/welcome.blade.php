@@ -26,68 +26,161 @@
             height: 100vh;
             width: 100%;
         }
-        
+
+        /* Hero section styles */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://source.unsplash.com/1920x1080/?business,teamwork') center center/cover no-repeat;
+            color: white;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            margin-top: 15px;
+        }
+
+        .about-section {
+            padding: 60px 20px;
+            background-color: #f8f9fa;
+        }
+
+        .contact-section {
+            padding: 60px 20px;
+            background-color: #e9ecef;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px 0;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 
 </head>
 
 <body>
-    <div class="container-fluid">
 
+    <div class="container-fluid p-0">
 
-        <!--Navbar start-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light custom-sticky">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Employee Management System</a>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">Employee Management System</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="d-flex w-100 justify-content-center">
-                        <ul class="navbar-nav mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">News</a>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Right-aligned Login and Register buttons -->
-                    <div class="ms-auto d-flex align-items-center">
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact Us</a>
+                        </li>
+                    </ul>
+                    <div>
                         <a href="/login" class="btn btn-outline-primary me-2">Login</a>
                         <a href="/register" class="btn btn-primary">Register</a>
                     </div>
                 </div>
             </div>
         </nav>
-        <!--Navbar end-->
 
-        <!--Hero-section start-->
-        <div class="container hero-img">
-
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Welcome to Employee Management System</h1>
+                <p class="hero-description">Efficiently manage your workforce with our intuitive tools.</p>
+                <a href="/register" class="btn btn-primary btn-lg mt-4">Get Started</a>
+            </div>
         </div>
-        <!--Hero-section end-->
 
-        <!--About-Us-section start-->
-        <div class="container mt-5">
-            <h2 class="text-center">About Us</h2>
+        <!-- About Us Section -->
+        <section id="about" class="about-section">
+            <div class="container text-center">
+                <h2>About Us</h2>
+                <p class="mt-4">
+                    Our Employee Management System is designed to help organizations streamline their HR processes,
+                    track employee performance, and manage resources effectively. Join us to transform the way you
+                    manage your workforce.
+                </p>
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <h5>Mission</h5>
+                        <p>Empowering businesses with innovative solutions.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Vision</h5>
+                        <p>Transforming workforce management globally.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Values</h5>
+                        <p>Commitment, Integrity, and Excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        </div>
-        <!--About-Us-section end-->
+        <!-- Contact Us Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="text-center">Contact Us</h2>
+                <p class="text-center mt-3">We'd love to hear from you! Fill out the form below to get in touch.</p>
+                <form class="mt-4">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
 
-
+        <!-- Footer -->
+        <footer class="footer text-center">
+            <div class="container">
+                <p class="mb-0">© 2024 Employee Management System. All rights reserved.</p>
+                <p class="mt-2">
+                    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                </p>
+            </div>
+        </footer>
 
     </div>
+
 
 </body>
 
