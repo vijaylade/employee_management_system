@@ -5,7 +5,7 @@ The Employee Management System is a comprehensive web-based application designed
 
 ## Roles and Features
 
-**Admin Role**
+## Admin Role
 
 - The admin role is designed to manage and oversee employee-related operations. Admins have access to the following features:
 
@@ -25,7 +25,7 @@ The Employee Management System is a comprehensive web-based application designed
 - Access and manage all events scheduled within the organization.
 
 
-**Employee Role**
+## Employee Role
 
 - The employee role focuses on enabling employees to interact with the system efficiently. Employees have access to the following features:
 
@@ -38,7 +38,7 @@ The Employee Management System is a comprehensive web-based application designed
 **3] View Events**
 - Access the list of upcoming events within the organization.
 
-**View Profile**
+**4] View Profile**
 - Review personal profile information.
 
 
@@ -46,7 +46,7 @@ The Employee Management System is a comprehensive web-based application designed
 
 **Backend:**  - Laravel (PHP Framework)
 
-**Frontend:**  - Bootstrap 5, HTML, CSS
+**Frontend:**  - Bootstrap 5, HTML, CSS, JavaScript
 
 **Database:**  - MySQL
 
